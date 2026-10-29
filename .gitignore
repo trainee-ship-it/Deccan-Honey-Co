@@ -1,0 +1,31 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+dist-ssr/
+
+# Env files
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Reference-site captures (screenshots/video of comvita.co.uk — layout reference only, never published)
+Sources/Reference_Page/
+
+# Claude Code / Codex local config, installed skill plugins, design-tool artifacts (not project code)
+.claude/settings.local.json
+**/.claude/skills/
+**/.agents/skills/
+**/.codex/
+**/.taste-skill/

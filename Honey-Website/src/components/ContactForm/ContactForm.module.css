@@ -1,0 +1,133 @@
+.section {
+  padding-block: var(--space-32) var(--space-64);
+}
+
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-8);
+  margin-bottom: var(--space-24);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.breadcrumb a {
+  color: var(--color-text-muted);
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  color: var(--color-text);
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-16);
+  max-width: 560px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title {
+  margin: 0;
+  font-size: var(--text-3xl);
+}
+
+.intro {
+  margin: 0;
+  color: var(--color-text-muted);
+}
+
+.intro a {
+  color: var(--color-text);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  width: 100%;
+  margin-top: var(--space-8);
+  text-align: left;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.input,
+.textarea {
+  width: 100%;
+  padding: var(--space-12) var(--space-16);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font: inherit;
+  font-size: var(--text-sm);
+}
+
+.textarea {
+  resize: vertical;
+}
+
+.error {
+  margin: 0;
+  font-size: var(--text-xs);
+  color: var(--color-danger);
+}
+
+.submit {
+  align-self: flex-start;
+  padding: var(--space-12) var(--space-32);
+  border: none;
+  border-radius: var(--radius-full);
+  background: var(--color-primary);
+  color: var(--color-primary-contrast);
+  font-weight: 600;
+  font-size: var(--text-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  transition: background var(--transition-fast);
+}
+
+.submit:hover {
+  background: var(--color-primary-hover);
+}
+
+.success {
+  margin: 0;
+  padding: var(--space-16);
+  width: 100%;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface-alt);
+  font-weight: 600;
+}
+
+@media (min-width: 640px) {
+  .row {
+    flex-direction: row;
+  }
+
+  .row .field {
+    flex: 1;
+  }
+
+  .submit {
+    align-self: center;
+  }
+}

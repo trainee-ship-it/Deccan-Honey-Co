@@ -1,0 +1,222 @@
+.section {
+  margin-block: var(--space-24);
+  background: var(--color-surface);
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+}
+
+.media {
+  width: 100%;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-16);
+  padding: var(--space-32) var(--container-gutter);
+  text-align: left;
+}
+
+.eyebrow {
+  margin: 0;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.title {
+  font-size: var(--text-3xl);
+}
+
+.text {
+  margin: 0;
+  max-width: 48ch;
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  margin-top: var(--space-8);
+  padding: var(--space-16) var(--space-32);
+  background: var(--color-brown-900);
+  color: var(--color-text-on-dark);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background var(--transition-fast);
+}
+
+.cta:hover {
+  background: var(--color-primary);
+  color: var(--color-primary-contrast);
+}
+
+@media (min-width: 1024px) {
+  .section {
+    margin-block: var(--space-48);
+  }
+
+  .inner {
+    flex-direction: row;
+    align-items: stretch;
+    min-height: clamp(380px, 42vw, 641.031px);
+    gap: var(--space-50);
+  }
+
+  .reverse {
+    flex-direction: row-reverse;
+  }
+
+  .media,
+  .content {
+    flex: 1;
+  }
+
+  .media {
+    align-self: stretch;
+    max-width: 1272.5px;
+  }
+
+  .image {
+    aspect-ratio: auto;
+    max-height: 641.031px;
+  }
+
+  .content {
+    max-width: 560px;
+    align-items: flex-start;
+    justify-content: center;
+    padding-block: var(--space-48);
+    padding-inline: var(--container-gutter);
+    text-align: left;
+  }
+}
+
+/* ---- Full-bleed overlay variant ---- */
+.overlaySection {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-height: clamp(380px, 48vw, 560px);
+  overflow: hidden;
+}
+
+.overlayImage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 75% 15%;
+}
+
+.overlayScrim {
+  position: absolute;
+  inset: 0;
+  background: rgba(46, 33, 23, 0.55);
+}
+
+@media (min-width: 768px) {
+  /* Matches the source photo's own proportions (1672x941) so cover-cropping
+     barely trims it, revealing the full scene instead of just a tall sliver;
+     capped so it doesn't grow unreasonably tall on ultra-wide screens. */
+  .overlaySection {
+    width: 100%;
+    aspect-ratio: 1672 / 941;
+    min-height: 460px;
+    max-height: 760px;
+  }
+
+  .overlayScrim {
+    background: radial-gradient(
+      ellipse 60% 90% at 86% 50%,
+      rgba(46, 33, 23, 0.82) 0%,
+      rgba(46, 33, 23, 0.55) 50%,
+      rgba(46, 33, 23, 0.15) 80%,
+      rgba(46, 33, 23, 0) 100%
+    );
+  }
+}
+
+.overlayContent {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-16);
+  max-width: 640px;
+  width: min(100%, 640px);
+  margin-left: auto;
+  padding-inline: var(--container-gutter);
+  text-align: left;
+  color: var(--color-text-on-dark);
+}
+
+.overlayEyebrow {
+  margin: 0;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-amber-300);
+}
+
+.overlayTitle {
+  font-size: var(--text-3xl);
+  color: var(--color-text-on-dark);
+}
+
+.overlayText {
+  margin: 0;
+  max-width: 48ch;
+  font-size: var(--text-lg);
+  color: rgba(255, 253, 248, 0.88);
+}
+
+.overlayCta {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-12) var(--space-24);
+  border: 2px solid var(--color-text-on-dark);
+  border-radius: var(--radius-full);
+  color: var(--color-text-on-dark);
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    background var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.overlayCta:hover {
+  background: var(--color-text-on-dark);
+  color: var(--color-brown-900);
+}
+
+@media (min-width: 768px) {
+  .overlayTitle {
+    font-size: var(--text-4xl);
+  }
+
+}
